@@ -19,7 +19,7 @@ while True:
 
 
 # 2. Calculate the Public key from the Private key with Elliptic Curve.
-#public_key = elliptic.EccMultiply(generator, int(private_key, 16))
+public_key = elliptic.EccMultiply(generator, int(private_key, 16))
 
 # 3. Generate a compressed and uncompressed private key
 
