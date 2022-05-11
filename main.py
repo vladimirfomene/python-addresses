@@ -34,11 +34,11 @@ def generate_base58_format(payload, prefix, suffix = ""):
 
 
 
-wip_key_compressed = generate_base58_format(private_key, "80", "01")
-wip_key_uncompressed = generate_base58_format(private_key, "80")
+wif_key_compressed = generate_base58_format(private_key, "80", "01")
+wif_key_uncompressed = generate_base58_format(private_key, "80")
 
-print("WIP Private key Compressed:", wip_key_compressed)
-print("WIP Private key Uncompressed:", wip_key_uncompressed)
+print("WIF Private key Compressed:", wif_key_compressed)
+print("WIF Private key Uncompressed:", wif_key_uncompressed)
 
 
 uncompressed_public_key = "04" + hex(public_key[0])[2:] + hex(public_key[1])[2:]
