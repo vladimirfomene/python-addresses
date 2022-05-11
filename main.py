@@ -40,11 +40,12 @@ wip_key_uncompressed = generate_base58_format(private_key, "80")
 print("WIP Private key Compressed:", wip_key_compressed)
 print("WIP Private key Uncompressed:", wip_key_uncompressed)
 
+
 uncompressed_public_key = "04" + hex(public_key[0])[2:] + hex(public_key[1])[2:]
 prefix_compressed_public_key = "02" if public_key[1] % 2 == 0 else "03"
 compressed_public_key = prefix_compressed_public_key + hex(public_key[0])[2:]
 print("Uncompressed Public key: ", uncompressed_public_key)
 print("Compressed Public key: ", compressed_public_key)
 
-print("Uncompressed Bitcoin Address: ", generate_base58_format(hex(public_key[0])[2:] + hex(public_key[1])[2:], "04"))
-print("Compressed Bitcoin Address: ", generate_base58_format(hex(public_key[0])[2:], prefix_compressed_public_key))
+print("Uncompressed Bitcoin Address: ", generate_base58_format(uncompressed_public_key, "00"))
+print("Compressed Bitcoin Address: ", generate_base58_format(compressed_public_key, "00"))
