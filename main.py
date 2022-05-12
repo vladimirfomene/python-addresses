@@ -27,7 +27,7 @@ public_key = elliptic.EccMultiply(generator, int(private_key, 16))
 # 3. Generate a compressed and uncompressed private key
 def generate_base58_format(payload, prefix, suffix = ""):
     hash256 = hashlib.sha256(decode_hex(prefix + payload)).hexdigest()
-    checksum = hashlib.new('ripemd160', decode_hex(hash256)).hexdigest()
+    checksum = hashlib.sha256(decode_hex(hash256)).hexdigest()
     checksum = checksum[:8]
     formatted_key = prefix + payload + suffix + checksum
     return base58.b58encode(decode_hex(formatted_key))
